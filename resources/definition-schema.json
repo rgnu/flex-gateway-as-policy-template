@@ -1,0 +1,17 @@
+{
+  "$id": "test.json",
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "title": "Assembly Script Policy Template",
+  "description": "Assembly Script Policy Template",
+  "type": "object",
+  "@context": {
+    "@vocab": "anypoint://vocabulary/policy.yaml#",
+    "security": "anypoint://vocabulary/policy.yaml#",
+    "config": "anypoint://vocabulary/policy.yaml#"
+  },
+  "properties": {
+  },
+  "required": [
+  ],
+  "additionalProperties": false
+}

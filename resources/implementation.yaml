@@ -1,0 +1,5 @@
+#%Policy Implementation 1.0
+name: Assembly Script Policy Template
+technology: flexGateway
+minRuntimeVersion: "1.4.0"
+maxRuntimeVersion: "1.6.0"
