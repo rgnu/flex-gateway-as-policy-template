@@ -1,8 +1,13 @@
 //@ts-ignore
 export * from "@rgnu/flex-gateway-as-sdk/proxy"; // this exports the required functions for the proxy to interact with us.
 
-import { Context, FilterHeadersStatusValues, FlexContext, FlexRootContext, registerRootContext } from "@rgnu/flex-gateway-as-sdk";
-import { parse } from '@serial-as/json'
+import {
+    Context,
+    FilterHeadersStatusValues,
+    FlexContext,
+    FlexRootContext,
+    registerRootContext
+} from "@rgnu/flex-gateway-as-sdk";
 
 //@ts-ignore
 @serializable
@@ -10,19 +15,11 @@ class FilterConfig {
     greeting: string = "Hello"
 }
 
-export class FilterRoot extends FlexRootContext {
+export class FilterRoot extends FlexRootContext<FilterConfig> {
     config: FilterConfig = new FilterConfig();
 
     createContext(context_id: u32): Context {
         return new Filter(context_id, this, this.config);
-    }
-
-    onConfigure(size: u32): bool {
-        if (size > 0 && super.onConfigure(size)) {
-            this.config = parse<FilterConfig>(this.getConfiguration());
-        }
-
-        return true;
     }
 }
 
@@ -41,4 +38,6 @@ class Filter extends FlexContext<FilterRoot> {
     }
 }
 
-registerRootContext((context_id: u32) => { return new FilterRoot(context_id); }, "main");
+registerRootContext((context_id: u32) => {
+    return new FilterRoot(context_id, new FilterConfig());
+}, "main");
