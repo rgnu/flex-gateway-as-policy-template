@@ -16,10 +16,8 @@ class FilterConfig {
 }
 
 export class FilterRoot extends FlexRootContext<FilterConfig> {
-    config: FilterConfig = new FilterConfig();
-
     createContext(context_id: u32): Context {
-        return new Filter(context_id, this, this.config);
+        return new Filter(context_id, this, this.getPolicyConfig());
     }
 }
 
