@@ -16,15 +16,23 @@ Requirements
 
 * [node](https://nodejs.org)
 
-Build
-=====
+Policy Build
+============
 
 Once the environment is set up with `npm` in your PATH,
 you can build it with:
 
 ```
-npm install
-npm asbuild
+make policy.build
 ```
 
 This will produce a .wasm file in `build/`.
+
+Policy Publish
+==============
+
+```
+make policy.anypoint.definition.publish
+make policy.anypoint.implementation.publish
+```
+

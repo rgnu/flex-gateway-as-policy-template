@@ -1,5 +1,5 @@
 #%Policy Implementation 1.0
-name: Assembly Script Policy Template
+name: Greeting-Flex
 technology: flexGateway
-minRuntimeVersion: "1.4.0"
-maxRuntimeVersion: "1.6.0"
+minRuntimeVersion: "1.6.0"
+maxRuntimeVersion: "1.8.0"

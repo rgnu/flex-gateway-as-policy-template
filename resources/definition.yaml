@@ -1,6 +1,6 @@
 #%Policy Definition 0.1
-name: Assembly Script Policy Template
-description: Assembly Script Policy Template
+name: Greeting
+description: Greeting Policy
 category: Other
 providedCharacteristics: []
 requiredCharacteristics: []
